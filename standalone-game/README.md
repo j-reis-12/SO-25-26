@@ -122,13 +122,13 @@ Este ficheiro é especialmente útil para rastrear o comportamento dos agentes, 
 ### Valgrind
 
 A biblioteca ncurses contem alguns [memory leaks](https://invisible-island.net/ncurses/ncurses.faq.html#config_leaks) a serem ignorados.
-Para suprimir os reports do valgrind associados a estes leaks, e facilitar a intrepretação do output da ferramenta, o código base contem o ficheiro `ncurses.suppressions` que pode ser passado para o valgrind com a flag `--suppressions=<suppression_file>`.
+Para suprimir os reports do valgrind associados a estes leaks, e facilitar a intrepretação do output da ferramenta, o código contem o ficheiro `ncurses.suppressions` que pode ser passado para o valgrind com a flag `--suppressions=<suppression_file>`.
 Memory leaks associados ao ncurses (ou seja, ignorados pelo suppression file fornecido), não serão contabilizados na avaliação.
 
 ### GDB
 
 Dado que a biblioteca ncurses captura totalmente o terminal, o uso de ferramentas como o gdb tem de ser adaptado.
-Em vez de correr o executavel com o gdb como explicado no guião da [deteção de erros](https://github.com/tecnico-so/lab_detecao-erros), deve executar o Pacmanist normalmente e, numa segunda janela, fazer "attach" ao programa, atravez do seguinte comando:
+Deve executar o Pacmanist normalmente e, numa segunda janela, fazer "attach" ao programa, atravez do seguinte comando:
 
 ```bash
 gdb -p <Pacmaist_PID>
